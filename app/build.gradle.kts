@@ -17,12 +17,12 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
+    //testImplementation(libs.junit.jupiter)
+    //testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // This dependency is used by the application.
-    implementation(libs.guava)
+    implementation(libs.cxf.rs.client)
+    implementation(libs.cxf.rs.ext)
+    implementation(libs.eclipse.yasson)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "cl.hcslearning.cxf.rest.client.App"
 }
 
 tasks.named<Test>("test") {
